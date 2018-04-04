@@ -1,21 +1,8 @@
 {
   "name": "news-junkie",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/dbailey25/news-junkie.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/dbailey25/news-junkie/issues"
-  },
-  "homepage": "https://github.com/dbailey25/news-junkie#readme",
+  "description": "news scraper",
+  "main": "server.js",
   "dependencies": {
     "body-parser": "^1.18.2",
     "cheerio": "^1.0.0-rc.2",
@@ -23,5 +10,20 @@
     "express-handlebars": "^3.0.0",
     "mongoose": "^5.0.12",
     "request": "^2.85.0"
-  }
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dbailey25/news-scraper.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dbailey25/news-scraper/issues"
+  },
+  "homepage": "https://github.com/dbailey25/news-scraper#readme"
 }
