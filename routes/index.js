@@ -31,7 +31,7 @@ app.get("/articles/:id", fetch.retrieveOne);
 app.post("/articles/:id", note.postNote);
 
 // Route for deleting an Article's associated Note
-app.delete("/articles/:id", note.deleteNote);
+// app.delete("/articles/:id", note.deleteNote);
 
 
 

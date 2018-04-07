@@ -39,7 +39,7 @@ $(document).on("click", "p", function() {
         // Place the body of the note in the body textarea
         $("#bodyinput").val(data.note.body);
         // A button to delet an existing note, with the id of the article saved to it
-        $("#notes").append("<button data-id='" + data.note + "' id='deletenote'>Delete Note</button>");
+        $("#notes").append("<button data-id='" + data._id + "' id='deletenote'>Delete Note</button>");
       }
     });
 });
@@ -80,7 +80,7 @@ $(document).on("click", "#deletenote", function() {
 
   // Run a DELETE request to change the note, using what's entered in the inputs
   $.ajax({
-    method: "DELETE",
+    method: "POST",
     url: "/articles/" + thisId,
     data: {
       // Value taken from title input
