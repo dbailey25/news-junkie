@@ -38,6 +38,8 @@ $(document).on("click", "p", function() {
         $("#titleinput").val(data.note.title);
         // Place the body of the note in the body textarea
         $("#bodyinput").val(data.note.body);
+        // A button to delet an existing note, with the id of the article saved to it
+        $("#notes").append("<button data-id='" + data.note + "' id='deletenote'>Delete Note</button>");
       }
     });
 });
@@ -56,6 +58,35 @@ $(document).on("click", "#savenote", function() {
       title: $("#titleinput").val(),
       // Value taken from note textarea
       body: $("#bodyinput").val()
+    }
+  })
+    // With that done
+    .then(function(data) {
+      // Log the response
+      console.log(data);
+      // Empty the notes section
+      $("#notes").empty();
+    });
+
+  // Also, remove the values entered in the input and textarea for note entry
+  $("#titleinput").val("");
+  $("#bodyinput").val("");
+});
+
+// When you click the deletenote button
+$(document).on("click", "#deletenote", function() {
+  // Grab the id associated with the article from the submit button
+  var thisId = $(this).attr("data-id");
+
+  // Run a DELETE request to change the note, using what's entered in the inputs
+  $.ajax({
+    method: "DELETE",
+    url: "/articles/" + thisId,
+    data: {
+      // Value taken from title input
+      title: "",
+      // Value taken from note textarea
+      body: ""
     }
   })
     // With that done
