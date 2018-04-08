@@ -20,8 +20,7 @@ var ArticleSchema = new Schema({
     type: String,
     required: true
   },
-  sourceId:
-  {
+  sourceId: {
     type: String,
     // unique: true,
     required: true

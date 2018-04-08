@@ -7,7 +7,6 @@ $.getJSON("/articles", function(data) {
   }
 });
 
-
 // Whenever someone clicks a p tag
 $(document).on("click", "p", function() {
   // Empty the notes from the note section
@@ -17,9 +16,9 @@ $(document).on("click", "p", function() {
 
   // Now make an ajax call for the Article
   $.ajax({
-    method: "GET",
-    url: "/articles/" + thisId
-  })
+      method: "GET",
+      url: "/articles/" + thisId
+    })
     // With that done, add the note information to the page
     .then(function(data) {
       console.log(data);
@@ -51,15 +50,15 @@ $(document).on("click", "#savenote", function() {
 
   // Run a POST request to change the note, using what's entered in the inputs
   $.ajax({
-    method: "POST",
-    url: "/articles/" + thisId,
-    data: {
-      // Value taken from title input
-      title: $("#titleinput").val(),
-      // Value taken from note textarea
-      body: $("#bodyinput").val()
-    }
-  })
+      method: "POST",
+      url: "/articles/" + thisId,
+      data: {
+        // Value taken from title input
+        title: $("#titleinput").val(),
+        // Value taken from note textarea
+        body: $("#bodyinput").val()
+      }
+    })
     // With that done
     .then(function(data) {
       // Log the response
@@ -80,15 +79,15 @@ $(document).on("click", "#deletenote", function() {
 
   // Run a DELETE request to change the note, using what's entered in the inputs
   $.ajax({
-    method: "POST",
-    url: "/articles/" + thisId,
-    data: {
-      // Value taken from title input
-      title: "",
-      // Value taken from note textarea
-      body: ""
-    }
-  })
+      method: "POST",
+      url: "/articles/" + thisId,
+      data: {
+        // Value taken from title input
+        title: "",
+        // Value taken from note textarea
+        body: ""
+      }
+    })
     // With that done
     .then(function(data) {
       // Log the response

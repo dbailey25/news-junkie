@@ -14,7 +14,9 @@ var fetch = require('../controllers/fetch.js');
 var note = require('../controllers/note.js');
 
 // Use body-parser for handling form submissions
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({
+  extended: false
+}));
 
 // Routes ===================================================================
 
@@ -30,9 +32,4 @@ app.get("/articles/:id", fetch.retrieveOne);
 // Route for saving/updating an Article's associated Note
 app.post("/articles/:id", note.postNote);
 
-// Route for deleting an Article's associated Note
-// app.delete("/articles/:id", note.deleteNote);
-
-
-
-  module.exports = app;
+module.exports = app;
